@@ -102,8 +102,8 @@ const Card = () => {
                 nomi: e.target.nomi.value,
                 soni: e.target.soni.value,
                 narxi: e.target.narxi.value,
-                malumoti: e.target.value,
-                turi: e.target.value,
+                malumoti: e.target.malumoti.value,
+                turi: e.target.turi.value,
 
                 
               };
