@@ -46,6 +46,7 @@ const Add = ({ onClose }) => {
           <input type="text" name="rasm" id="" placeholder='Url изображения' {...register("rasm", { required: true })} />
           <input type="text" name="nomi" id="" placeholder='Названия' {...register("nomi", { required: true })} />
           <input type="text" name="malumoti" id="" placeholder='Информация' {...register("malumoti", { required: true })} />
+          <input type="text" name="turi" id="" placeholder='Тип #' {...register("turi", { required: true })} />
           <input type="number" name="soni" id="" placeholder='Количество' {...register("soni", { required: true })} />
           <input type="number" name="narxi" id="" placeholder='Цена' {...register("narxi", { required: true })} />
           <button>Отправка данных</button>

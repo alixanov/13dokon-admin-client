@@ -74,6 +74,7 @@ const Card = () => {
           <p>{item.nomi}</p>
           <p>{item.malumoti}</p>
           <h4>{item.soni} количество</h4>
+          <h4>{item.turi} тип</h4>
           <span>{item.narxi} $</span>
           <Link >Sotib olish</Link>
           <div className="delete__create" style={{ display: 'flex', alignItems: "center", gap: "4px" }}>
@@ -101,7 +102,10 @@ const Card = () => {
                 nomi: e.target.nomi.value,
                 soni: e.target.soni.value,
                 narxi: e.target.narxi.value,
-                malumoti:e.target.value,
+                malumoti: e.target.value,
+                turi: e.target.value,
+
+                
               };
               handleUpdate(updatedProduct);
             }} className='form'>
@@ -122,6 +126,12 @@ const Card = () => {
                 name="malumoti"
                 placeholder='Информация'
                 defaultValue={editProduct?.malumoti || ''}
+              />
+              <input
+                type="text"
+                name="turi"
+                placeholder='Тип #'
+                defaultValue={editProduct?.turi || ''}
               />
               <input
                 type="number"
