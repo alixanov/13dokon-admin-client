@@ -76,7 +76,7 @@ const Card = () => {
           <h4>{item.soni} количество</h4>
           <h4>{item.turi} тип</h4>
           <span>{item.narxi} $</span>
-          <Link >Sotib olish</Link>
+          {/* <Link >Sotib olish</Link> */}
           <div className="delete__create" style={{ display: 'flex', alignItems: "center", gap: "4px" }}>
             <button onClick={() => handleDelete(item._id)} disabled={isLoading}>
               {isLoading ? <CircularProgress size={20} /> : 'Удалить'}
