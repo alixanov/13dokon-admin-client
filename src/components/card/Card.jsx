@@ -16,7 +16,7 @@ const Card = () => {
   // const [openPaymentModal, setOpenPaymentModal] = useState(false); // Состояние для модального окна оплаты
 
   useEffect(() => {
-    axios.get('https://13dokon-admin-client.vercel.app/api/getall')
+    axios.get('https://13dokon-server.vercel.app/api/getall')
       .then(response => {
         setData(response.data);
       })
@@ -27,7 +27,7 @@ const Card = () => {
 
   const handleDelete = (id) => {
     setIsLoading(true);
-    axios.delete(`http://localhost:8080/api/delete/${id}`)
+    axios.delete(`https://13dokon-server.vercel.app/api/delete/${id}`)
       .then(res => {
         setIsLoading(false);
         setDeleteState(prev => !prev);
@@ -48,7 +48,7 @@ const Card = () => {
   };
 
   const handleUpdate = (updatedProduct) => {
-    axios.put(`http://localhost:8080/api/update/${editProduct._id}`, updatedProduct)
+    axios.put(`https://13dokon-server.vercel.app/api/update/${editProduct._id}`, updatedProduct)
       .then(response => {
         setOpenEditModal(false);
         setDeleteState(prev => !prev);
