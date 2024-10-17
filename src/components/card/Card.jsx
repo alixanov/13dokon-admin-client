@@ -27,7 +27,7 @@ const Card = () => {
 
   const handleDelete = (id) => {
     setIsLoading(true);
-    axios.delete(`https://13dokon-admin-client.vercel.app/api/delete/${id}`)
+    axios.delete(`http://localhost:8080/api/delete/${id}`)
       .then(res => {
         setIsLoading(false);
         setDeleteState(prev => !prev);
@@ -48,7 +48,7 @@ const Card = () => {
   };
 
   const handleUpdate = (updatedProduct) => {
-    axios.put(`https://13dokon-admin-client.vercel.app/api/update/${editProduct._id}`, updatedProduct)
+    axios.put(`http://localhost:8080/api/update/${editProduct._id}`, updatedProduct)
       .then(response => {
         setOpenEditModal(false);
         setDeleteState(prev => !prev);
