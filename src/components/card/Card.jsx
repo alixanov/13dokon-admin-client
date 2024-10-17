@@ -76,6 +76,7 @@ const Card = () => {
           <h4>{item.soni} количество</h4>
           <h4>{item.turi} тип</h4>
           <span>{item.narxi} $</span>
+          <h4>{item.ton}тон</h4>
           {/* <Link >Sotib olish</Link> */}
           <div className="delete__create" style={{ display: 'flex', alignItems: "center", gap: "4px" }}>
             <button onClick={() => handleDelete(item._id)} disabled={isLoading}>
@@ -104,7 +105,7 @@ const Card = () => {
                 narxi: e.target.narxi.value,
                 malumoti: e.target.malumoti.value,
                 turi: e.target.turi.value,
-
+                ton: e.target.turi.value,
                 
               };
               handleUpdate(updatedProduct);
@@ -144,6 +145,12 @@ const Card = () => {
                 name="narxi"
                 placeholder='Цена'
                 defaultValue={editProduct?.narxi || ''}
+              />
+              <input
+                type="number"
+                name="ton"
+                placeholder='Тон-цена'
+                defaultValue={editProduct?.ton || ''}
               />
               <button type="submit">Сохранить изменения</button>
             </form>

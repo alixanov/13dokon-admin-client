@@ -49,6 +49,8 @@ const Add = ({ onClose }) => {
           <input type="text" name="turi" id="" placeholder='Тип #' {...register("turi", { required: true })} />
           <input type="number" name="soni" id="" placeholder='Количество' {...register("soni", { required: true })} />
           <input type="number" name="narxi" id="" placeholder='Цена' {...register("narxi", { required: true })} />
+          <input type="number" name="ton" id="" placeholder='Тон-цена' {...register("ton", { required: true })} />
+
           <button>Отправка данных</button>
         </form>
       </div>
