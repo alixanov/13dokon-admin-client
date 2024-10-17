@@ -21,7 +21,7 @@ const Add = ({ onClose }) => {
   });
 
   const addData = (data) => {
-    axios.post("http://localhost:8080/api/add", data) // Уберите лишний слэш
+    axios.post("https://13dokon-admin-client.vercel.app/api/add", data) // Уберите лишний слэш
       .then(res => {
         notyf.success("Готово! Продукт теперь в каталоге.")
         onClose()
