@@ -1,0 +1,219 @@
+/* Основной контейнер для карточек */
+.card {
+     width: 100%;
+     min-height: 87.7vh;
+     display: flex;
+     align-items: flex-start;
+     justify-content: flex-start;
+     flex-wrap: wrap;
+     background-color: #242627;
+     padding: 2%;
+     gap: 20px;
+     /* Уменьшен отступ между карточками */
+     animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+     0% {
+          opacity: 0;
+          transform: translateY(10px);
+     }
+
+     100% {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* Карточка продукта */
+.box {
+     width: 226px;
+     /* Уменьшена ширина */
+     min-height: 350px;
+     /* Уменьшена высота */
+     background-color: #ffffff;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: space-between;
+     text-align: left;
+     border-radius: 8px;
+     /* Немного уменьшен радиус */
+     padding: 15px;
+     /* Уменьшен внутренний отступ */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     animation: slideIn 0.4s ease-in-out;
+}
+
+/* Анимация появления карточек */
+@keyframes slideIn {
+     0% {
+          opacity: 0;
+          transform: translateY(20px);
+     }
+
+     100% {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* Ховер эффект для карточек */
+.box:hover {
+     transform: translateY(-5px);
+     /* Уменьшен подъём */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+     /* Уменьшена тень */
+}
+
+/* Изображение продукта */
+.box>img {
+     width: 100%;
+     height: 150px;
+     /* Уменьшена высота изображения */
+     object-fit: cover;
+     border-radius: 6px;
+     transition: transform 0.3s ease;
+}
+
+/* Цена продукта */
+.box>span {
+     color: #c9b5a2;
+     font-weight: 700;
+     font-size: 18px;
+     /* Уменьшен размер шрифта */
+}
+
+/* Заголовок и другая информация */
+.box>h4 {
+     color: #24262779;
+     font-weight: 400;
+     font-size: 14px;
+     /* Уменьшен размер шрифта */
+}
+
+.box>p {
+     color: #333;
+     font-size: 12px;
+     /* Уменьшен размер текста описания */
+     line-height: 1.4;
+     margin: 8px 0;
+     /* Уменьшен отступ */
+}
+
+/* Кнопка */
+.box>a {
+     width: 100%;
+     height: 35px;
+     /* Уменьшена высота кнопки */
+     background-color: #c9b5a2;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     font-size: 14px;
+     /* Уменьшен размер шрифта */
+     border-radius: 6px;
+     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.box>a:hover {
+     background-color: #b09b92;
+     transform: scale(1.02);
+}
+
+/* Кнопки удаления и изменения */
+.delete__create>button {
+     width: 90px;
+     /* Уменьшена ширина кнопок */
+     height: 30px;
+     /* Уменьшена высота кнопок */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 12px;
+     /* Уменьшен размер шрифта */
+     font-weight: 600;
+     background-color: #f0edeb;
+     border: none;
+     cursor: pointer;
+     border-radius: 3px;
+     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete__create>button:hover {
+     background-color: #e0deda;
+     transform: scale(0.98);
+}
+
+/* Стиль заголовка карточки */
+.card__title {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 6px;
+     /* Уменьшен промежуток между иконкой и текстом */
+}
+
+.card__title>p {
+     color: #242627;
+     font-weight: 700;
+     font-size: 14px;
+     /* Уменьшен размер текста заголовка */
+}
+
+.card__title>img {
+     width: 24px;
+     /* Уменьшен размер иконки */
+     height: 24px;
+     object-fit: cover;
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+     .box {
+          width: 100%;
+          max-width: 280px;
+          /* Уменьшен размер карточки для планшетов */
+          height: auto;
+     }
+
+     .card {
+          justify-content: center;
+     }
+}
+
+@media (max-width: 480px) {
+     .box {
+          width: 100%;
+          max-width: 250px;
+          /* Уменьшен размер карточки для мобильных */
+          height: auto;
+     }
+
+     .box>img {
+          height: 120px;
+          /* Уменьшена высота изображения на мобильных */
+     }
+
+     .card__title>p,
+     .box>span,
+     .box>h4 {
+          font-size: 12px;
+          /* Уменьшен общий размер текста */
+     }
+
+     .delete__create>button {
+          width: 80px;
+          /* Уменьшена ширина кнопок для мобильных */
+          height: 28px;
+     }
+
+     .box>a {
+          font-size: 12px;
+          /* Уменьшен размер текста кнопки */
+          height: 30px;
+     }
+}

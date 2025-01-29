@@ -1,0 +1,173 @@
+/* Основной модальный контейнер */
+.modal {
+     z-index: 1000;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgba(0, 0, 0, 0.4);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+     }
+
+     to {
+          opacity: 1;
+     }
+}
+
+/* Модальное содержимое */
+.modal-content {
+     background: #fff;
+     padding: 20px;
+     border-radius: 10px;
+     width: 90%;
+     max-width: 400px;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     animation: slideUp 0.3s ease;
+     position: relative;
+}
+
+/* Анимация для модального окна */
+@keyframes slideUp {
+     from {
+          transform: translateY(20px);
+          opacity: 0;
+     }
+
+     to {
+          transform: translateY(0);
+          opacity: 1;
+     }
+}
+
+/* Кнопка закрытия */
+.close {
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     font-size: 20px;
+     color: #888;
+     border: none;
+     background: none;
+     cursor: pointer;
+}
+
+.close:hover {
+     color: #000;
+}
+
+/* Форма */
+.form {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+}
+
+/* Поля ввода */
+.form input {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ddd;
+     border-radius: 6px;
+     font-size: 14px;
+     outline: none;
+     transition: border 0.3s;
+}
+
+.form input:focus {
+     border-color: #b08e72;
+}
+
+/* Кнопка отправки */
+.form button {
+     padding: 10px 15px;
+     background: #242627;
+     color: #fff;
+     font-size: 16px;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: background 0.3s ease;
+}
+
+.form button:hover {
+     background: #161818;
+}
+
+/* ======================== */
+/* Медиа-запросы для адаптации */
+/* ======================== */
+
+/* Для экранов до 768px (планшеты) */
+@media (max-width: 768px) {
+     .modal-content {
+          width: 95%;
+          max-width: 350px;
+          /* Уменьшена максимальная ширина */
+          padding: 15px;
+          /* Уменьшены внутренние отступы */
+     }
+
+     .form input {
+          font-size: 13px;
+          /* Уменьшен размер текста */
+          padding: 8px;
+          /* Уменьшены внутренние отступы полей */
+     }
+
+     .form button {
+          font-size: 14px;
+          /* Уменьшен размер текста в кнопках */
+          padding: 8px 10px;
+          /* Уменьшены внутренние отступы кнопок */
+     }
+
+     .close {
+          font-size: 18px;
+          /* Уменьшен размер кнопки закрытия */
+          top: 8px;
+          right: 8px;
+     }
+}
+
+/* Для экранов до 480px (мобильные телефоны) */
+@media (max-width: 480px) {
+     .modal-content {
+          width: 95%;
+          /* Почти полная ширина экрана */
+          max-width: 300px;
+          /* Ещё меньше ширина */
+          padding: 10px;
+          /* Более компактные отступы */
+     }
+
+     .form input {
+          font-size: 12px;
+          /* Ещё меньше текст полей */
+          padding: 6px;
+          /* Ещё меньше отступы */
+     }
+
+     .form button {
+          font-size: 12px;
+          /* Ещё меньше текст в кнопках */
+          padding: 6px 8px;
+          /* Компактные кнопки */
+     }
+
+     .close {
+          font-size: 16px;
+          /* Уменьшен размер кнопки закрытия */
+          top: 5px;
+          right: 5px;
+     }
+}
